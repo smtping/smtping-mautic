@@ -5,7 +5,7 @@ declare(strict_types=1);
 return [
     'name'        => 'SMTPing Email Verifier',
     'description' => 'Verify contacts with SMTPing, block risky addresses on forms and route campaigns by verification result.',
-    'version'     => '0.9.0',
+    'version'     => '1.0.0',
     'author'      => 'SMTPing',
     'services'    => [
         'integrations' => [
