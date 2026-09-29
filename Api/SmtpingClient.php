@@ -29,7 +29,7 @@ class SmtpingClient
             'headers'     => [
                 'X-API-Key'  => $apiKey,
                 'Accept'     => 'application/json',
-                'User-Agent' => 'smtping-mautic/0.9.0',
+                'User-Agent' => 'smtping-mautic/1.0.0',
             ],
         ]);
     }
