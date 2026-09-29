@@ -8,7 +8,7 @@ Verify Mautic contacts with [SMTPing](https://smtping.com), block risky addresse
 
 Requires Mautic 5 or 6 and PHP 8.0 or later.
 
-> Beta (0.9.x). Please report any install or runtime issue to support@smtping.com or in GitHub issues.
+Report any install or runtime issue to support@smtping.com or in GitHub issues.
 
 ## Install
 
@@ -68,5 +68,6 @@ Segment example: filter **SMTPing band** equals `safe` to build a send-ready seg
 
 - [SMTPing API documentation](https://smtping.com/docs)
 - Support: support@smtping.com
+- Blog: [SMTPedia](https://smtpedia.com)
 
 License: GPL-3.0-or-later
