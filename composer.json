@@ -1,0 +1,44 @@
+{
+    "name": "smtping/mautic-email-verifier",
+    "description": "SMTPing Email Verifier for Mautic: verify contacts, block risky addresses on forms, route campaigns by verification result.",
+    "type": "mautic-plugin",
+    "license": "GPL-3.0-or-later",
+    "keywords": [
+        "mautic",
+        "plugin",
+        "integration",
+        "email verification",
+        "email validation",
+        "email verifier",
+        "spamtrap",
+        "disposable email",
+        "smtping"
+    ],
+    "homepage": "https://smtping.com",
+    "authors": [
+        {
+            "name": "SMTPing",
+            "email": "support@smtping.com",
+            "homepage": "https://smtping.com"
+        }
+    ],
+    "support": {
+        "email": "support@smtping.com",
+        "docs": "https://smtping.com/docs",
+        "source": "https://github.com/smtping/smtping-mautic",
+        "issues": "https://github.com/smtping/smtping-mautic/issues"
+    },
+    "require": {
+        "php": ">=8.0",
+        "mautic/core-lib": "^5.0 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MauticPlugin\\SmtpingBundle\\": ""
+        }
+    },
+    "extra": {
+        "install-directory-name": "SmtpingBundle"
+    },
+    "minimum-stability": "stable"
+}
