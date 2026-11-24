@@ -137,7 +137,7 @@ class VerifyContactsCommand extends Command
         foreach ($client->bulkResults($jobId) as $row) {
             $email  = strtolower(trim((string) ($row['email'] ?? '')));
             $status = (string) ($row['status'] ?? 'unknown');
-            $band   = SmtpingClient::band($status);
+            $band   = SmtpingClient::bandOf($row);
             foreach ($byEmail[$email] ?? [] as $id) {
                 $this->fields->write($id, $status, $band);
                 ++$counts[$band];

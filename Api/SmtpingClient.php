@@ -16,7 +16,7 @@ class SmtpingClient
     public const BULK_MAX = 100000;
 
     private const SAFE = ['valid', 'alias'];
-    private const AVOID = ['invalid', 'spamtrap', 'disposable', 'blacklisted', 'complainer', 'spambot', 'inbox_full'];
+    private const AVOID = ['invalid', 'spamtrap', 'disposable', 'blacklisted', 'complainer', 'spambot', 'inbox_full', 'no_reply'];
 
     private Client $http;
 
@@ -46,11 +46,23 @@ class SmtpingClient
         return 'judgement';
     }
 
+    /**
+     * The band decided by the API, or derived from the status when the row has none.
+     *
+     * @param array<string, mixed> $row
+     */
+    public static function bandOf(array $row): string
+    {
+        $band = $row['band'] ?? null;
+
+        return in_array($band, ['safe', 'avoid', 'judgement'], true) ? $band : self::band(isset($row['status']) ? (string) $row['status'] : null);
+    }
+
     /** @return array<string, mixed> */
     public function verify(string $email): array
     {
         $r = $this->request('POST', 'verify/single', ['email' => trim($email)]);
-        $r['band'] = self::band($r['status'] ?? null);
+        $r['band'] = self::bandOf($r);
 
         return $r;
     }
